@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="dPTM Nutrition" />
 <meta property="og:title" content="dPTM Nutrition — Clear Protein Colombia · MaracuMango" />
 <meta property="og:description" content="20g de proteína. 0 azúcar. Se mezcla con agua fría. La proteína que no parece proteína." />
-<meta property="og:image" content="assets/product-front.webp" />
+<meta property="og:image" content="assets/product-hero.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png" />
@@ -231,6 +231,17 @@
   .section-head p{margin-top:16px;font-size:16.5px;color:var(--ink);opacity:.75;}
   .center{margin-left:auto;margin-right:auto;text-align:center;}
 
+  /* ---------- flavor diptych ---------- */
+  .flavor-section{background:var(--bone);padding:70px 0 0;}
+  .flavor-diptych{display:grid;gap:14px;grid-template-columns:1fr 1fr;}
+  .flavor-frame{border-radius:22px;overflow:hidden;aspect-ratio:4/5;position:relative;}
+  .flavor-frame img{width:100%;height:100%;object-fit:cover;}
+  .flavor-caption{
+    text-align:center;max-width:560px;margin:26px auto 0;
+    font-family:'Archivo Expanded';font-size:clamp(19px,2.6vw,26px);
+  }
+  .flavor-caption span{color:var(--orange);}
+
   /* ---------- why clear ---------- */
   .whyclear{background:var(--charcoal);color:var(--bone);}
   .whyclear .section-head p{color:var(--bone);opacity:.68;}
@@ -384,13 +395,24 @@
   /* ---------- final cta ---------- */
   .final-cta{
     background:linear-gradient(135deg,var(--orange),var(--ember));
-    color:var(--bone);text-align:center;padding:90px 0;
+    color:var(--bone);overflow:hidden;
   }
-  .final-cta h2{font-size:clamp(30px,5.5vw,52px);max-width:720px;margin:0 auto 18px;}
-  .final-cta p{opacity:.9;max-width:520px;margin:0 auto 32px;font-size:16.5px;}
+  .final-cta .wrap{
+    display:grid;gap:20px;align-items:center;padding:70px 0;
+  }
+  @media(min-width:900px){.final-cta .wrap{grid-template-columns:1fr .62fr;gap:50px;padding:0;}}
+  .final-cta-copy{text-align:center;}
+  @media(min-width:900px){.final-cta-copy{text-align:left;}}
+  .final-cta h2{font-size:clamp(30px,5.5vw,50px);max-width:520px;margin:0 auto 18px;}
+  .final-cta p{opacity:.9;max-width:480px;margin:0 auto 32px;font-size:16.5px;}
+  @media(min-width:900px){.final-cta h2,.final-cta p{margin-left:0;margin-right:0;}}
   .final-cta .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+  @media(min-width:900px){.final-cta .btns{justify-content:flex-start;}}
   .final-cta .btn-primary{background:var(--charcoal);}
   .final-cta .btn-primary:hover{background:#000;}
+  .final-cta-art{align-self:stretch;}
+  .final-cta-art img{width:100%;height:100%;object-fit:cover;max-height:520px;}
+  @media(min-width:900px){.final-cta-art img{max-height:none;}}
 
   /* ---------- footer ---------- */
   footer{background:var(--charcoal);color:var(--bone);padding:70px 0 30px;}
@@ -474,7 +496,7 @@
       </div>
       <div class="hero-art reveal">
         <div class="frame">
-          <img src="assets/hero-lifestyle.webp" alt="dPTM Clear Protein MaracuMango con maracuyá y mango" />
+          <img src="assets/hero-lifestyle.webp" alt="Shaker y bolsa dPTM Clear Protein MaracuMango" />
         </div>
         <div class="hero-badge">
           <strong>20g</strong>
@@ -491,6 +513,17 @@
       <div class="stat"><b>0g</b><small>Azúcar</small></div>
       <div class="stat"><b>82</b><small>Kcal / porción</small></div>
       <div class="stat"><b>H₂O</b><small>Agua fría, sin batidora</small></div>
+    </div>
+  </section>
+
+  <!-- SABOR / ¿PROTEÍNA? -->
+  <section class="flavor-section">
+    <div class="wrap">
+      <div class="flavor-diptych reveal">
+        <div class="flavor-frame"><img src="assets/flavor-passion.webp" alt="Maracuyá partido a la mitad — ¿Proteína?" /></div>
+        <div class="flavor-frame"><img src="assets/flavor-mango.webp" alt="Mango en cubos — ¿Proteína?" /></div>
+      </div>
+      <p class="flavor-caption reveal"><span>Sí.</span> Saborizantes de maracuyá y mango que saben a fruta de verdad — sin azúcar, sin culpa.</p>
     </div>
   </section>
 
@@ -533,7 +566,7 @@
       <div class="product-grid">
         <div class="product-photo reveal">
           <span class="tag">MaracuMango</span>
-          <img src="assets/product-front.webp" srcset="assets/product-front.webp 1400w, assets/product-front@2x.webp 2200w" sizes="(min-width:960px) 40vw, 90vw" alt="dPTM Clear Protein Powder sabor MaracuMango" />
+          <img src="assets/product-hero.webp" alt="dPTM Clear Protein Powder sabor MaracuMango" />
         </div>
         <div class="product-info reveal">
           <span class="kicker">Producto actual</span>
@@ -725,11 +758,16 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="wrap">
-      <h2 class="reveal">Colombia ya puede pedir.</h2>
-      <p class="reveal">20g de proteína. 0 azúcar. Agua fría. Sin excusas.</p>
-      <div class="btns reveal">
-        <a class="btn btn-primary" href="#producto">Pedir ahora</a>
-        <a class="btn btn-ghost-bone" href="https://wa.me/573143591998?text=Hola%2C%20quiero%20pedir%20dPTM%20Clear%20Protein%20MaracuMango." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <div class="final-cta-copy">
+        <h2 class="reveal">Colombia ya puede pedir.</h2>
+        <p class="reveal">0 azúcar. 0 carbohidratos. 20g de proteína. 100% colombiano.</p>
+        <div class="btns reveal">
+          <a class="btn btn-primary" href="#producto">Pedir ahora</a>
+          <a class="btn btn-ghost-bone" href="https://wa.me/573143591998?text=Hola%2C%20quiero%20pedir%20dPTM%20Clear%20Protein%20MaracuMango." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="final-cta-art reveal">
+        <img src="assets/scoop-facts.webp" alt="1 scoop. 0 azúcar, 0 carbohidratos, 20g de proteína, 100% colombiano" />
       </div>
     </div>
   </section>
